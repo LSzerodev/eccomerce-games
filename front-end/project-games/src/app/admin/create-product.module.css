@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.createContainer {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.createHeader {
+  margin-bottom: 40px;
+}
+
+.createTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 12px 0;
+}
+
+.titleIcon {
+  color: #9333EA;
+  flex-shrink: 0;
+}
+
+.createSubtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+}
+
+.formWrapper {
+  background: rgba(36, 37, 49, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.productForm {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #C0C0C0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labelIcon {
+  color: #9333EA;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(192, 192, 192, 0.5);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #9333EA;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.submitButton {
+  flex: 1;
+  padding: 16px;
+  background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.cancelButton {
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #C0C0C0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+/* Tablet */
+@media (max-width: 1024px) {
+  .createContainer {
+    padding: 30px 24px;
+  }
+
+  .createTitle {
+    font-size: 28px;
+  }
+
+  .formWrapper {
+    padding: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .createContainer {
+    padding: 20px 16px;
+  }
+
+  .createHeader {
+    margin-bottom: 32px;
+  }
+
+  .createTitle {
+    font-size: 24px;
+    gap: 12px;
+  }
+
+  .titleIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .createSubtitle {
+    font-size: 14px;
+  }
+
+  .formWrapper {
+    padding: 24px 20px;
+  }
+
+  .productForm {
+    gap: 24px;
+  }
+
+  .formGroup {
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .labelIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .input,
+  .textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .textarea {
+    min-height: 120px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .formActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .submitButton {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .cancelButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .createContainer {
+    padding: 16px 12px;
+  }
+
+  .createTitle {
+    font-size: 20px;
+  }
+
+  .formWrapper {
+    padding: 20px 16px;
+  }
+
+  .productForm {
+    gap: 20px;
+  }
+
+  .input,
+  .textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,73 @@
+.buttonWrapper {
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 61px;
+  background-color: #12FF89;
+  border-radius-bottom-right: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  font-size: 22.39px;
+  line-height: 1.17em;
+  color: #0B0B10;
+  text-align: center;
+  min-width: 228.26px;
+  min-height: 65.51px;
+  clip-path: polygon(15% 0, 95% 0, 81% 100%, 0% 100%);
+  overflow: visible;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 222222;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+  text-transform: lowercase;
+}
+
+.decorativeTopLeft {
+    position: absolute;
+    top: 0px;
+    left: 18px;
+    width: 51px;
+    height: 40px;
+    clip-path: polygon(15% 0, 95% 0, 81% 100%, 0% 100%);
+    border-radius: 15px 5px 10px 5px;
+    background-color: #EDF1F7;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.decorativeBottomRight {
+  position: absolute;
+  bottom: -4px;
+  right: 26px;
+  width: 51px;
+  height: 40px;
+  clip-path: polygon(21% 0, 100% 0, 81% 100%, 0 100%);
+  border-radius: 15px 5px 10px 5px;
+  background-color: #EDF1F7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: 0 4px 12px rgba(18, 255, 137, 0.3);
+}
+
+.buttonWrapper:hover .button {
+  transform: translateY(-2px);
+}
+
+.buttonWrapper:active .button {
+  transform: translateY(0);
+}
