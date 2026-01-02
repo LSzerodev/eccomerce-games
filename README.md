@@ -408,4 +408,3 @@ ISC
 ---
 
 Desenvolvido com ❤️ usando Node.js, React, PostgreSQL e Prisma
-
