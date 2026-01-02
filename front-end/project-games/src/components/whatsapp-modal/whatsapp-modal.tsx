@@ -29,3 +29,4 @@ export function WhatsAppModal({ isOpen, onClose }: WhatsAppModalProps) {
     </div>
   );
 }
+
