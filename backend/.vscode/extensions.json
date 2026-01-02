@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    // 🎨 Tema e ícones para interface mais clean
+    
+
+    // 💅 Formatação de código
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // 🔤 Fontes com ligaduras (mais clean)
+    "pkief.material-icon-theme",
+
+    // 🚀 Produtividade
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-typescript-next",
+
+    // 🎯 TypeScript/JavaScript melhorado
+    "bradlc.vscode-tailwindcss",
+    "prisma.prisma"
+  ],
+  "unwantedRecommendations": [
+    // Remover extensões que podem poluir a interface
+  ]
+}

@@ -1,12 +1,12 @@
-import type { CartItem, ProductOption } from '@prisma/client';
+import type { Prisma } from '@prisma/client';
 
-interface CartItemWithProductOption extends CartItem {
-  productOption: ProductOption;
-}
+type CartItemWithProductOption = Prisma.CartItemGetPayload<{
+  include: { productOption: true };
+}>;
 
 function calculateCartTotal(items: CartItemWithProductOption[]) {
   return items.reduce((acumulator, item) => {
-    const itemTotal = Number(item.productOption.price) * Number(item.quantity);
+    const itemTotal = Number(item.productOption.price) * item.quantity;
     return acumulator + itemTotal;
   }, 0);
 }
