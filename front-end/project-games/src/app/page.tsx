@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import styles from "../styles/page.module.css";
-import background from "../backgrund.png";
-import bg1 from '@/Frame 81.png';
-import bg from '@/bg (1).png';
+import background from "@/Banners/backgrund.png";
+import bg1 from '@/Banners/Frame 81.png';
+import bg from '@/Banners/bg (1).png';
 
 import { StockBadge } from "../components/stock/stock-badge";
 import { BuyButton } from "../components/buttons/buy-button/buy-button";
