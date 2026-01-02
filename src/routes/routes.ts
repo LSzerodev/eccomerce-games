@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, type Request, type Response } from 'express';
 
 import { CreateProductController } from '../controllers/products/create-product.controller.js';
 import { DeleteProductByIdController } from '../controllers/products/delete-product-by-id.controller.js';
@@ -50,44 +50,44 @@ const pixGeneratorController = new PixGeneratorController();
 const validateApiKeyController = new ValidateApiKeyController();
 
 // Rota para validar API Key (pública, mas requer API Key no header)
-routes.post('/admin/validate', (req, res) => validateApiKeyController.handle(req, res));
+routes.post('/admin/validate', (req: Request, res: Response) => validateApiKeyController.handle(req, res));
 
 // Rotas públicas (leitura)
-routes.get('/products', (req, res) => listProductsController.handle(req, res));
-routes.get('/products/:id', (req, res) => findProductByIdController.handle(req, res));
+routes.get('/products', (req: Request, res: Response) => listProductsController.handle(req, res));
+routes.get('/products/:id', (req: Request, res: Response) => findProductByIdController.handle(req, res));
 
 // Rotas protegidas - Admin (requerem API Key)
-routes.post('/products', adminAuth, (req, res) => createProductController.handle(req, res));
-routes.put('/products/:id', adminAuth, (req, res) => updateProductController.handle(req, res));
-routes.delete('/products/:id', adminAuth, (req, res) =>
+routes.post('/products', adminAuth, (req: Request, res: Response) => createProductController.handle(req, res));
+routes.put('/products/:id', adminAuth, (req: Request, res: Response) => updateProductController.handle(req, res));
+routes.delete('/products/:id', adminAuth, (req: Request, res: Response) =>
   deleteProductByIdController.handle(req, res)
 );
 
-routes.post('/products/:productId/options', adminAuth, (req, res) =>
+routes.post('/products/:productId/options', adminAuth, (req: Request, res: Response) =>
   addOptionsToProductController.handle(req, res)
 );
 
-routes.post('/productOptions', adminAuth, (req, res) =>
+routes.post('/productOptions', adminAuth, (req: Request, res: Response) =>
   createProductOptionController.handle(req, res)
 );
-routes.delete('/productOptions/:productOptionId', adminAuth, (req, res) =>
+routes.delete('/productOptions/:productOptionId', adminAuth, (req: Request, res: Response) =>
   deleteProductOptionController.handle(req, res)
 );
 
-routes.get('/carts', (req, res) => listCartsController.handle(req, res));
-routes.post('/carts', (req, res) => createCartController.handle(req, res));
-routes.delete('/carts/:uuid', (req, res) => deleteCartController.handle(req, res));
+routes.get('/carts', (req: Request, res: Response) => listCartsController.handle(req, res));
+routes.post('/carts', (req: Request, res: Response) => createCartController.handle(req, res));
+routes.delete('/carts/:uuid', (req: Request, res: Response) => deleteCartController.handle(req, res));
 
-routes.post('/carts/:cartUuid/items', (req, res) => addItemToCartController.handle(req, res));
-routes.get('/carts/:cartUuid/items', (req, res) => listItemsToCartController.handle(req, res));
-routes.put('/carts/:cartUuid/items/:productOptionId', (req, res) =>
+routes.post('/carts/:cartUuid/items', (req: Request, res: Response) => addItemToCartController.handle(req, res));
+routes.get('/carts/:cartUuid/items', (req: Request, res: Response) => listItemsToCartController.handle(req, res));
+routes.put('/carts/:cartUuid/items/:productOptionId', (req: Request, res: Response) =>
   updateItemQuantityController.handle(req, res)
 );
-routes.delete('/carts/:cartUuid/items/:productOptionId', (req, res) =>
+routes.delete('/carts/:cartUuid/items/:productOptionId', (req: Request, res: Response) =>
   deleteItemToProductController.handle(req, res)
 );
-routes.get('/carts/:cartUuid/total', (req, res) => calculateTotalController.handle(req, res));
+routes.get('/carts/:cartUuid/total', (req: Request, res: Response) => calculateTotalController.handle(req, res));
 
-routes.post('/carts/:cartUuid/pix', (req, res) => pixGeneratorController.handle(req, res));
+routes.post('/carts/:cartUuid/pix', (req: Request, res: Response) => pixGeneratorController.handle(req, res));
 
 export { routes };
