@@ -1,0 +1,929 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.productsContainer {
+  padding: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.productsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.productsTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 8px 0;
+}
+
+.titleIcon {
+  color: #9333EA;
+  flex-shrink: 0;
+}
+
+.productsSubtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+}
+
+.headerStats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statBadge {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6CFFC0;
+  background: rgba(108, 255, 192, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 255, 192, 0.3);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.createButton {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.createButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+}
+
+.createButton:active {
+  transform: translateY(0);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background: rgba(36, 37, 49, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.statCardSuccess {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.statCardWarning {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.statCardDanger {
+  border-color: rgba(107, 114, 128, 0.3);
+}
+
+.statValue {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+}
+
+.statLabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #C0C0C0;
+  margin: 0;
+}
+
+.searchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  color: #C0C0C0;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput::placeholder {
+  color: rgba(192, 192, 192, 0.5);
+}
+
+.searchInput:focus {
+  border-color: #9333EA;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+}
+
+.filterButton {
+  padding: 10px 20px;
+  background: rgba(147, 51, 234, 0.2);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  border-radius: 12px;
+  color: #DFC7F9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  background: rgba(147, 51, 234, 0.3);
+  border-color: #9333EA;
+}
+
+.filterButtonActive {
+  background: rgba(147, 51, 234, 0.4);
+  border-color: #9333EA;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.3);
+}
+
+.tableWrapper {
+  background: rgba(36, 37, 49, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  overflow-x: auto;
+}
+
+.productsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productsTable thead {
+  background: rgba(147, 51, 234, 0.1);
+}
+
+.productsTable th {
+  padding: 20px 24px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.productsTable td {
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #C0C0C0;
+}
+
+.productsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.productsTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.productImagePlaceholder {
+  width: 60px;
+  height: 60px;
+  background: rgba(147, 51, 234, 0.2);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderIcon {
+  color: #9333EA;
+  width: 24px;
+  height: 24px;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.productName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productDescription {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.priceValue {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6CFFC0;
+}
+
+.stockControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.savingIcon,
+.checkIcon {
+  color: #6CFFC0;
+  animation: spin 1s linear infinite;
+}
+
+.checkIcon {
+  animation: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stockInput {
+  width: 80px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.stockInput:focus {
+  border-color: #9333EA;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2);
+}
+
+.stockUnit {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #C0C0C0;
+}
+
+.statusBadge {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.stockOk {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22C55E;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.stockLow {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.stockEmpty {
+  background: rgba(107, 114, 128, 0.1);
+  color: #9CA3AF;
+  border-color: rgba(107, 114, 128, 0.3);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton,
+.deleteButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton {
+  background: rgba(147, 51, 234, 0.2);
+  color: #DFC7F9;
+  border: 1px solid rgba(147, 51, 234, 0.4);
+}
+
+.editButton:hover {
+  background: rgba(147, 51, 234, 0.3);
+  border-color: #9333EA;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+}
+
+.deleteButton {
+  background: rgba(239, 68, 68, 0.2);
+  color: #FCA5A5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.deleteButton:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #EF4444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.confirmDelete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confirmText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #EF4444;
+  margin-right: 4px;
+}
+
+.confirmButton,
+.cancelButton {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirmButton {
+  background: rgba(239, 68, 68, 0.2);
+  color: #FCA5A5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.confirmButton:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #EF4444;
+}
+
+.cancelButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #C0C0C0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.confirmButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #C0C0C0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.emptyIcon {
+  color: #9333EA;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptySubtext {
+  font-size: 14px;
+  color: #9CA3AF;
+  margin-top: 8px;
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: #C0C0C0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.loadingIcon {
+  color: #9333EA;
+  margin-bottom: 16px;
+  animation: spin 1s linear infinite;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .productsContainer {
+    padding: 30px 24px;
+  }
+
+  .productsTitle {
+    font-size: 28px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .productsTable {
+    min-width: 800px;
+  }
+
+  .productsTable th,
+  .productsTable td {
+    padding: 16px 12px;
+    font-size: 13px;
+  }
+
+  .productImagePlaceholder {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .productsContainer {
+    padding: 20px 16px;
+  }
+
+  .productsHeader {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .productsTitle {
+    font-size: 24px;
+  }
+
+  .titleIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .productsSubtitle {
+    font-size: 14px;
+  }
+
+  .createButton {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .statCard {
+    padding: 16px;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+  }
+
+  .searchSection {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .searchInput {
+    padding: 12px 14px 12px 44px;
+    font-size: 14px;
+  }
+
+  .filterGroup {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filterButton {
+    padding: 8px 16px;
+    font-size: 13px;
+    flex: 1;
+    min-width: calc(50% - 4px);
+    justify-content: center;
+  }
+
+  .tableWrapper {
+    border-radius: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .productsTable {
+    min-width: 700px;
+  }
+
+  .productsTable th {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .productsTable td {
+    padding: 16px 8px;
+    font-size: 12px;
+  }
+
+  .productInfo {
+    gap: 12px;
+  }
+
+  .productImagePlaceholder {
+    width: 45px;
+    height: 45px;
+  }
+
+  .productName {
+    font-size: 13px;
+  }
+
+  .productDescription {
+    font-size: 11px;
+  }
+
+  .priceValue {
+    font-size: 14px;
+  }
+
+  .stockInput {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .stockUnit {
+    font-size: 11px;
+  }
+
+  .statusBadge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .confirmDelete {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .confirmText {
+    font-size: 11px;
+  }
+
+  .confirmButton,
+  .cancelButton {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .toggleOptionsButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .optionsList {
+    padding: 10px;
+    max-height: 250px;
+  }
+
+  .optionItem {
+    padding: 10px;
+  }
+
+  .optionName {
+    font-size: 13px;
+  }
+
+  .optionPrice {
+    font-size: 12px;
+  }
+
+  .optionStock {
+    font-size: 11px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .productsContainer {
+    padding: 16px 12px;
+  }
+
+  .productsTitle {
+    font-size: 20px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterButton {
+    min-width: 100%;
+  }
+
+  .productsTable {
+    min-width: 600px;
+  }
+
+  .productImagePlaceholder {
+    width: 40px;
+    height: 40px;
+  }
+
+  .placeholderIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.optionsSection {
+  position: relative;
+}
+
+.toggleOptionsButton {
+  padding: 8px 16px;
+  background: rgba(147, 51, 234, 0.2);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  border-radius: 8px;
+  color: #DFC7F9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggleOptionsButton:hover {
+  background: rgba(147, 51, 234, 0.3);
+  border-color: #9333EA;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+}
+
+.optionsList {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(36, 37, 49, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.optionItem:last-child {
+  margin-bottom: 0;
+}
+
+.optionItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(147, 51, 234, 0.3);
+}
+
+.optionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.optionName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.optionPrice {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6CFFC0;
+}
+
+.optionStock {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #C0C0C0;
+}
+
+.deleteOptionButton {
+  padding: 6px 12px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 6px;
+  color: #FCA5A5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.deleteOptionButton:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #EF4444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.deleteOptionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noOptions {
+  text-align: center;
+  padding: 20px;
+  color: #C0C0C0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.noOptions p {
+  margin: 0;
+}

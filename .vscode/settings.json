@@ -1,0 +1,203 @@
+{
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabCloseButton": "right",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Minimizar distrações
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+
+  // Breadcrumbs mais sutis
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+
+  // ============================================
+  // 📝 EDITOR - Configurações Clean
+  // ============================================
+
+  // Fonte e espaçamento - Clean e Moderno
+  "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'Consolas', 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.7,
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+
+  // Minimizar barra de rolagem e números de linha
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 120,
+  "editor.minimap.renderCharacters": false,
+  "editor.lineNumbers": "on",
+  "editor.renderLineHighlight": "all",
+
+  // Interface do editor mais clean
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "none",
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.guides.indentation": false,
+  "editor.inlineSuggest.enabled": true,
+
+  // Esconder elementos visuais desnecessários
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.scrollbar.horizontalScrollbarSize": 10,
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+
+  // ============================================
+  // 🎯 SUGESTÕES E AUTOCOMPLETE
+  // ============================================
+
+  "editor.suggest.preview": true,
+  "editor.suggest.showSnippets": true,
+  "editor.suggest.localityBonus": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // ============================================
+  // 🗂️ EXPLORER - Navegação mais limpa
+  // ============================================
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Esconder arquivos desnecessários do explorer
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": false,
+    "**/.vscode": false
+  },
+
+  // ============================================
+  // 🔍 BUSCA E DIAGNÓSTICOS
+  // ============================================
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true,
+    "**/coverage": true
+  },
+
+  // Problemas mais sutis
+  "problems.showCurrentInStatus": true,
+  "editor.renderValidationDecorations": "on",
+
+  // ============================================
+  // 💅 FORMATAÇÃO E LINT
+  // ============================================
+
+  // TypeScript/JavaScript
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================
+  // 🎨 TEMA E CORES (ajuste conforme preferência)
+  // ============================================
+
+  // ============================================
+  // ⚡ PERFORMANCE E FLUIDEZ
+  // ============================================
+
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.inlineEdit.enabled": true,
+
+  // Terminal mais clean - Mesma fonte do editor para consistência
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.cursorBlinking": true,
+
+  // ============================================
+  // 🚀 GIT - Interface mais limpa
+  // ============================================
+
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "scm.diffDecorations": "all",
+  "scm.diffDecorationsGutterVisibility": "always",
+
+  // ============================================
+  // 📦 EXTENSÕES ESPECÍFICAS
+  // ============================================
+
+  // Prettier
+  "prettier.enable": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 100,
+
+  // ESLint
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+
+  // ============================================
+  // 🎯 OUTRAS CONFIGURAÇÕES CLEAN
+  // ============================================
+
+  // Reduzir notificações desnecessárias
+  "notification.badge.enabled": false,
+  "notifications.badge.enabled": false,
+
+  // Telemetria (opcional - desabilitar se preferir)
+  "telemetry.telemetryLevel": "off",
+
+  // Janela mais clean
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "compact",
+  "workbench.editor.empty.hint": "hidden",
+
+  // Zoom suave
+  "window.zoomLevel": 0,
+  "workbench.editor.tabActionLocation": "right"
+}

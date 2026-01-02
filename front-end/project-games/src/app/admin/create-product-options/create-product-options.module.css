@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.pageContainer {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0B0B10 0%, #1A1A24 100%);
+  padding: 0;
+}
+
+.headerSection {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(108, 255, 192, 0.05) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.headerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.3);
+}
+
+.pageTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mainContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.productSelectionCard {
+  background: rgba(36, 37, 49, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardIcon {
+  color: #9333EA;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.selectedBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(108, 255, 192, 0.1);
+  border: 1px solid rgba(108, 255, 192, 0.3);
+  border-radius: 20px;
+  color: #6CFFC0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selectLabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #C0C0C0;
+}
+
+.productSelect {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.productSelect:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.productSelect:focus {
+  border-color: #9333EA;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+}
+
+.productSelect option {
+  background: #1F2937;
+  color: #FFFFFF;
+  padding: 12px;
+}
+
+.selectedProductInfo {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.productInfoCard {
+  background: rgba(147, 51, 234, 0.1);
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.productInfoHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #9333EA;
+}
+
+.productInfoTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #9333EA;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.productInfoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productName {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.productDescription {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  animation: fadeIn 0.4s ease;
+}
+
+.formSection {
+  position: sticky;
+  top: 180px;
+  height: fit-content;
+  align-self: start;
+}
+
+.listSection {
+  min-height: 400px;
+}
+
+.emptyStateContainer {
+  margin-top: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.emptyStateCard {
+  background: rgba(36, 37, 49, 0.6);
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 80px 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.emptyStateIcon {
+  color: rgba(147, 51, 234, 0.4);
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.emptyStateTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+}
+
+.emptyStateText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #C0C0C0;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .formSection {
+    position: relative;
+    top: 0;
+  }
+
+  .headerSection {
+    padding: 32px 30px;
+  }
+
+  .mainContent {
+    padding: 32px 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .headerSection {
+    padding: 24px 20px;
+    position: relative;
+  }
+
+  .mainContent {
+    padding: 24px 20px;
+  }
+
+  .productSelectionCard {
+    padding: 20px;
+  }
+
+  .titleWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .iconCircle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .pageTitle {
+    font-size: 24px;
+  }
+
+  .pageSubtitle {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .selectedBadge {
+    width: 100%;
+    justify-content: center;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .productSelect {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .productInfoCard {
+    padding: 16px;
+  }
+
+  .productName {
+    font-size: 16px;
+  }
+
+  .productDescription {
+    font-size: 13px;
+  }
+
+  .contentGrid {
+    gap: 20px;
+  }
+
+  .emptyStateCard {
+    padding: 60px 24px;
+  }
+
+  .emptyStateIcon {
+    margin-bottom: 20px;
+  }
+
+  .emptyStateTitle {
+    font-size: 20px;
+  }
+
+  .emptyStateText {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .headerSection {
+    padding: 20px 16px;
+  }
+
+  .mainContent {
+    padding: 20px 16px;
+  }
+
+  .iconCircle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .pageSubtitle {
+    font-size: 13px;
+  }
+
+  .productSelectionCard {
+    padding: 16px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .productSelect {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .emptyStateCard {
+    padding: 40px 20px;
+  }
+
+  .emptyStateTitle {
+    font-size: 18px;
+  }
+
+  .emptyStateText {
+    font-size: 13px;
+  }
+}
