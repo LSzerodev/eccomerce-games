@@ -1,17 +1,7 @@
 # ============================================
 # SEGURANÇA - Variáveis de Ambiente e Secrets
 # ============================================
-<<<<<<< HEAD
 # NUNCA versionar arquivos com credenciais, chaves ou tokens
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env*.local
-
-# Secrets e certificados
-=======
 .env
 .env.local
 .env.development
@@ -21,7 +11,8 @@
 .env.production
 .env.production.local
 .env*.local
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
+
+# Secrets e certificados
 *.pem
 *.key
 *.cert
@@ -29,7 +20,7 @@
 *.pfx
 secrets/
 *.secret
-<<<<<<< HEAD
+*.token
 
 # Arquivos de configuração sensíveis
 config.local.*
@@ -64,19 +55,12 @@ prisma/generated/
 /build/
 /out/
 *.tsbuildinfo
-=======
-*.token
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 
 # ============================================
 # DEPENDÊNCIAS
 # ============================================
 node_modules/
-<<<<<<< HEAD
-/.pnp
-=======
 .pnp
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -85,77 +69,41 @@ node_modules/
 !.yarn/versions
 
 # ============================================
-<<<<<<< HEAD
 # LOGS E DEBUG
 # ============================================
 # Logs de aplicação
 *.log
 logs/
 *.log.*
-=======
-# BUILD E CACHE
-# ============================================
-.next/
-out/
-dist/
-build/
-.vercel/
-.turbo/
-.swc/
-*.tsbuildinfo
-
-# ============================================
-# LOGS E DEBUG
-# ============================================
-*.log
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-<<<<<<< HEAD
-=======
-logs/
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 
 # ============================================
 # TESTING
 # ============================================
-<<<<<<< HEAD
-/coverage
-/.nyc_output
-*.lcov
-.nyc_output/
-=======
 coverage/
 .nyc_output
 *.lcov
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 
 # ============================================
 # IDE E EDITORES
 # ============================================
-<<<<<<< HEAD
 # VSCode
-=======
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-<<<<<<< HEAD
 
 # IntelliJ / WebStorm
-=======
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 .idea/
 *.iml
 *.iws
 *.ipr
-<<<<<<< HEAD
 
 # Vim
 *.swp
@@ -164,33 +112,21 @@ coverage/
 .vim/
 
 # Emacs
-*~
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
 *.elc
-=======
-*.swp
-*.swo
-*~
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 
 # ============================================
 # SISTEMA OPERACIONAL
 # ============================================
-<<<<<<< HEAD
 # macOS
-=======
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
-<<<<<<< HEAD
 
 # Windows
-=======
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
@@ -203,12 +139,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
-<<<<<<< HEAD
 
 # Linux
-*~
-=======
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
 .directory
 .Trash-*
 
@@ -221,15 +153,13 @@ $RECYCLE.BIN/
 .cache/
 tmp/
 temp/
-<<<<<<< HEAD
 
 # ============================================
-# OUTROS
+# UPLOADS E ARQUIVOS GERADOS
 # ============================================
 # Arquivos de backup
 *.bak
 *.backup
-*~
 
 # Arquivos de lock (manter package-lock.json, mas ignorar outros)
 *.lock
@@ -241,18 +171,6 @@ temp/
 uploads/
 files/
 public/uploads/
-=======
-*.bak
-*.backup
-
-# ============================================
-# UPLOADS E ARQUIVOS GERADOS
-# ============================================
-public/uploads/
-uploads/
-files/
 user-uploads/
 runtime/
 generated/
-
->>>>>>> 7abd86ca8e4667481e9f486c301ccdc4b8f91ae1
