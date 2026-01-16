@@ -1,3 +1,5 @@
+link do projeto ( video ): https://www.youtube.com/watch?v=eSxfOFUXYqI
+
 # 🛒 Plataforma de E-commerce
 
 Uma plataforma de e-commerce moderna e simplificada, desenvolvida com foco em experiência do usuário e arquitetura escalável. Permite que usuários naveguem, visualizem produtos e realizem compras sem necessidade de cadastro ou login.
