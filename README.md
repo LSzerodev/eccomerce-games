@@ -31,7 +31,7 @@ Uma solução completa de e-commerce que oferece:
 - **PostgreSQL** - Banco de dados relacional robusto e confiável
 
 ### Frontend
-- **React** - Biblioteca para construção de interfaces de usuário
+- **Next.js** – Framework React utilizado para construir a interface do ecommerce, oferecendo melhor performance, renderização híbrida (SSR/SSG) e otimização para SEO.
 - **TypeScript** - Tipagem estática no frontend
 
 ## 🗄️ Modelagem de Dados
@@ -51,7 +51,7 @@ model Product {
   stock       Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  
+
   cartItems   CartItem[]
 }
 ```
@@ -72,7 +72,7 @@ model Cart {
   uuid      String     @unique
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
-  
+
   items     CartItem[]
 }
 ```
@@ -91,10 +91,10 @@ model CartItem {
   productId String
   quantity  Int      @default(1)
   createdAt DateTime @default(now())
-  
+
   cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
   product   Product  @relation(fields: [productId], references: [id])
-  
+
   @@unique([cartId, productId])
 }
 ```
@@ -251,119 +251,6 @@ backend/
 - Middleware de autorização para roles
 - Painel de gerenciamento de produtos
 
-## 🚀 Como Rodar o Projeto
-
-### Pré-requisitos
-
-- Node.js 18+ instalado
-- PostgreSQL 14+ instalado e rodando
-- npm ou yarn
-
-### Instalação
-
-#### 1. Clone o repositório
-```bash
-git clone <repository-url>
-cd plataform-games
-```
-
-#### 2. Instale as dependências do backend
-```bash
-cd backend
-npm install
-```
-
-#### 3. Instale as dependências do frontend
-```bash
-cd ../frontend
-npm install
-```
-
-### Variáveis de Ambiente
-
-#### Backend (.env)
-
-Crie um arquivo `.env` na pasta `backend/`:
-
-```env
-# Database
-DATABASE_URL="postgresql://usuario:senha@localhost:5432/nome_do_banco?schema=public"
-
-# Server
-PORT=3333
-NODE_ENV=development
-
-# CORS (se necessário)
-FRONTEND_URL=http://localhost:3000
-```
-
-**Importante:**
-- Substitua `usuario`, `senha` e `nome_do_banco` pelos valores do seu PostgreSQL
-- Mantenha o `.env` fora do controle de versão (adicione ao `.gitignore`)
-
-#### Frontend (.env)
-
-Crie um arquivo `.env` na pasta `frontend/`:
-
-```env
-REACT_APP_API_URL=http://localhost:3333
-```
-
-### Prisma Migrate
-
-#### 1. Gerar cliente Prisma
-```bash
-cd backend
-npx prisma generate
-```
-
-#### 2. Executar migrations
-```bash
-npx prisma migrate dev
-```
-
-Este comando irá:
-- Criar o banco de dados (se não existir)
-- Aplicar todas as migrations
-- Gerar o cliente Prisma atualizado
-
-#### 3. (Opcional) Popular banco com dados de exemplo
-```bash
-npx prisma db seed
-```
-
-### Executar o Projeto
-
-#### Backend
-```bash
-cd backend
-npm run dev
-```
-
-O servidor estará rodando em `http://localhost:3333`
-
-#### Frontend
-```bash
-cd frontend
-npm start
-```
-
-O frontend estará rodando em `http://localhost:3000`
-
-### Comandos Úteis
-
-#### Prisma Studio (Interface visual do banco)
-```bash
-cd backend
-npx prisma studio
-```
-
-#### Reset do banco de dados (cuidado!)
-```bash
-cd backend
-npx prisma migrate reset
-```
-
 ## 📁 Estrutura do Projeto
 
 ```
@@ -408,4 +295,3 @@ ISC
 ---
 
 Desenvolvido com ❤️ usando Node.js, React, PostgreSQL e Prisma
-
