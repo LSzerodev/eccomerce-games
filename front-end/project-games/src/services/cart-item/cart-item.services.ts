@@ -2,6 +2,15 @@ import { api } from "../api";
 
 export const CartItemServices = {
     async addItemToCart(cartUuid: string, productOptionId: string, quantity: number = 1){
+        if (!cartUuid) {
+            throw new Error("cartUuid é obrigatório");
+        }
+        if (!productOptionId) {
+            throw new Error("productOptionId é obrigatório");
+        }
+        if (!quantity || quantity <= 0) {
+            throw new Error("quantity deve ser maior que 0");
+        }
         return await api.post(`/carts/${cartUuid}/items`, {
             productOptionId,
             quantity

@@ -4,6 +4,7 @@
     "moduleResolution": "nodenext",
     "target": "esnext",
     "outDir": "./dist",
+    "rootDir": "./src",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
@@ -19,6 +20,6 @@
     "lib": ["ESNext"],
     "types": ["node"]
   },
-  "include": ["src/**/*", "@types/**/*", "prisma.config.ts"],
+  "include": ["src/**/*", "@types/**/*"],
   "exclude": ["node_modules", "dist"]
 }

@@ -29,12 +29,13 @@ export default function ProductPage() {
   const productId = params?.id as string;
 
   const allProducts = useProduct();
-  const { addItemToCart } = useCart();
+  const { addItemToCart, cartUuid, isLoading: cartLoading } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedOption, setSelectedOption] = useState("Selecione uma opção");
   const [selectedProductOption, setSelectedProductOption] = useState<ProductOption | null>(null);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [isBuying, setIsBuying] = useState(false);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -46,11 +47,23 @@ export default function ProductPage() {
 
         if (cachedProduct) {
           setProduct(cachedProduct);
+          // Seleciona automaticamente a primeira opção se houver
+          if (cachedProduct.productOptions && cachedProduct.productOptions.length > 0) {
+            const firstOption = cachedProduct.productOptions[0];
+            setSelectedOption(firstOption.name);
+            setSelectedProductOption(firstOption);
+          }
           setLoading(false);
         } else {
           const response = await ProductServices.getProductById(productId);
-          setProduct(response.data);
-
+          const fetchedProduct = response.data;
+          setProduct(fetchedProduct);
+          // Seleciona automaticamente a primeira opção se houver
+          if (fetchedProduct.productOptions && fetchedProduct.productOptions.length > 0) {
+            const firstOption = fetchedProduct.productOptions[0];
+            setSelectedOption(firstOption.name);
+            setSelectedProductOption(firstOption);
+          }
         }
       } catch (error) {
         console.error("Erro ao buscar produto:", error);
@@ -80,8 +93,20 @@ export default function ProductPage() {
       return;
     }
 
+    if (!optionToAdd.id) {
+      console.error("ProductOption sem ID:", optionToAdd);
+      alert("Erro: Opção do produto sem ID. Tente recarregar a página.");
+      return;
+    }
+
+    if (displayStock <= 0) {
+      alert("Produto sem estoque disponível");
+      return;
+    }
+
     setIsAddingToCart(true);
     try {
+      console.log("Adicionando ao carrinho:", { productOptionId: optionToAdd.id, quantity: 1 });
       await addItemToCart(optionToAdd.id, 1);
       alert("Produto adicionado ao carrinho!");
     } catch (error: any) {
@@ -90,6 +115,40 @@ export default function ProductPage() {
       alert(errorMessage);
     } finally {
       setIsAddingToCart(false);
+    }
+  };
+
+  const handleBuyNow = async () => {
+    const optionToAdd = selectedProductOption || product?.productOptions?.[0];
+
+    if (!optionToAdd) {
+      alert("Por favor, selecione uma opção do produto");
+      return;
+    }
+
+    if (!optionToAdd.id) {
+      console.error("ProductOption sem ID:", optionToAdd);
+      alert("Erro: Opção do produto sem ID. Tente recarregar a página.");
+      return;
+    }
+
+    if (displayStock <= 0) {
+      alert("Produto sem estoque disponível");
+      return;
+    }
+
+    setIsBuying(true);
+    try {
+      console.log("Comprando agora:", { productOptionId: optionToAdd.id, quantity: 1 });
+      // Adicionar item com skipRefresh=true para redirecionar imediatamente
+      await addItemToCart(optionToAdd.id, 1, true);
+      router.push("/checkout");
+    } catch (error: any) {
+      console.error("Erro ao adicionar ao carrinho:", error);
+      const errorMessage = error?.response?.data?.error || error?.message || "Erro ao adicionar produto ao carrinho. Tente novamente.";
+      alert(errorMessage);
+    } finally {
+      setIsBuying(false);
     }
   };
 
@@ -184,14 +243,20 @@ export default function ProductPage() {
 
           <div className={styles.botoes}>
             <div className={styles.buttonWrapper}>
-              <BuyButton className={styles.buttonComprar}>
+              <BuyButton
+                className={styles.buttonComprar}
+                onClick={handleBuyNow}
+                disabled={isBuying || cartLoading || displayStock <= 0}
+              >
                 <IoMdCard size={20} color="#1B1B30"/>
-                <span className={styles.buttonComprarText}>Comprar agora</span>
+                <span className={styles.buttonComprarText}>
+                  {isBuying ? "Processando..." : "Comprar agora"}
+                </span>
               </BuyButton>
               <button
                 className={styles.addToCartButton}
                 onClick={handleAddToCart}
-                disabled={isAddingToCart || displayStock <= 0}
+                disabled={isAddingToCart || cartLoading || displayStock <= 0}
               >
                 <FaCartShopping size={20} color="#DFC7F9"/>
                 <span>{isAddingToCart ? "Adicionando..." : "Adicionar ao carrinho"}</span>
